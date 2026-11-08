@@ -1,6 +1,6 @@
 <?php
 if ( ! defined( 'ABSPATH' ) ) { exit; }
-define( 'NOIRATH_VERSION', '1.0.0' );
+define( 'NOIRATH_VERSION', '1.1.0' );
 function noirath_setup() {
  load_theme_textdomain( 'noirath', get_template_directory() . '/languages' );
  add_theme_support( 'title-tag' ); add_theme_support( 'post-thumbnails' ); add_theme_support( 'automatic-feed-links' ); add_theme_support( 'custom-logo' );
@@ -28,3 +28,5 @@ function noirath_wishlist_page() {
  if ( class_exists( 'WooCommerce' ) && isset( $_GET['ids'] ) ) { $ids = array_filter( array_map( 'absint', explode( ',', sanitize_text_field( wp_unslash( $_GET['ids'] ) ) ) ) ); if ( $ids ) echo do_shortcode( '[products columns="4" ids="' . esc_attr( implode( ',', $ids ) ) . '"]' ); }
  echo '</div><p><a href="' . esc_url( noirath_shop_url() ) . '">Continue shopping</a></p></main>'; get_footer(); exit;
 } add_action( 'template_redirect', 'noirath_wishlist_page' );
+
+require_once get_template_directory() . '/inc/customer-care.php';
