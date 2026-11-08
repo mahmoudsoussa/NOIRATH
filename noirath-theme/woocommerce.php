@@ -1,0 +1,1 @@
+<?php get_header(); ?><main id="main" class="content-area wrap"><div class="shop-layout"><aside class="shop-sidebar" aria-label="Product filters"><?php if ( is_active_sidebar( 'shop-sidebar' ) && ( is_shop() || is_product_taxonomy() ) ) dynamic_sidebar( 'shop-sidebar' ); ?></aside><div><?php woocommerce_content(); ?></div></div></main><?php get_footer(); ?>
